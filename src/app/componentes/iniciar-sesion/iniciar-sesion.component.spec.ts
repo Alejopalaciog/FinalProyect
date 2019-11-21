@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InicioSecionComponent } from './inicio-secion.component';
+import { IniciarSesionComponent } from './iniciar-sesion.component';
 
-describe('InicioSecionComponent', () => {
-  let component: InicioSecionComponent;
-  let fixture: ComponentFixture<InicioSecionComponent>;
+describe('IniciarSesionComponent', () => {
+  let component: IniciarSesionComponent;
+  let fixture: ComponentFixture<IniciarSesionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InicioSecionComponent ]
+      declarations: [ IniciarSesionComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InicioSecionComponent);
+    fixture = TestBed.createComponent(IniciarSesionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
