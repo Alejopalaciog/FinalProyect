@@ -9,6 +9,7 @@ import { PaginaPrincipalComponent } from './componentes/pagina-principal/pagina-
 import { NavComponent } from './componentes/nav/nav.component';
 import { DetallesComponent } from './componentes/detalles/detalles.component';
 import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
+import { JumbotronComponent } from './componentes/jumbotron/jumbotron.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-ses
     NavComponent,
     DetallesComponent,
     IniciarSesionComponent,
+    JumbotronComponent,
   ],
   imports: [
     BrowserModule,

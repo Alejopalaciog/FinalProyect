@@ -7,8 +7,13 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root'
 })
 export class ApiService {
+  
 
   constructor(private http: HttpClient) { }
-
   
+  public getAllCells(){
+    let list: number[] = [1, 2, 3];
+    const url = "http://localhost:3000/api/books";
+    return this.http.get(url);
+  }
 }
