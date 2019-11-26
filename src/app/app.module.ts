@@ -1,25 +1,28 @@
-import { ApiService } from './servicios/api.service';
+//componentes
+import { HomeComponent } from './components/home/home.component';
+import { JumbotronComponent } from './components/jumbotron/jumbotron.component';
+//user
+import { RegisterComponent } from './components/user/register/register.component';
+import { LoginComponent } from './components/user/login/login.component';
+
+
+
+//servicios
+import { ApiService } from './service/api.service';
+//no se como ponerle
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';//enrutador
 import { AppComponent } from './app.component';
-import { RegistrarComponent } from './componentes/registrar/registrar.component';
-import { PaginaPrincipalComponent } from './componentes/pagina-principal/pagina-principal.component';
-import { NavComponent } from './componentes/nav/nav.component';
-import { DetallesComponent } from './componentes/detalles/detalles.component';
-import { IniciarSesionComponent } from './componentes/iniciar-sesion/iniciar-sesion.component';
-import { JumbotronComponent } from './componentes/jumbotron/jumbotron.component';
-
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    RegistrarComponent,
-    PaginaPrincipalComponent,
-    NavComponent,
-    DetallesComponent,
-    IniciarSesionComponent,
+    LoginComponent,
+    HomeComponent,    
     JumbotronComponent,
+    RegisterComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

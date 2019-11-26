@@ -1,4 +1,4 @@
-import { CellInterface } from './../interface/cell-interface';
+import { cellInterface } from '../interface/cell-interface';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';

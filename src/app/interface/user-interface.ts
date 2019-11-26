@@ -1,7 +1,6 @@
-export interface UserInterface{
+export interface userInterface{
     id?:string;
     nombre?:string;
     apellido?:string;
     email?:string;
-    
 }

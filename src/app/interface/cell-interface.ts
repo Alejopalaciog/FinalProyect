@@ -1,4 +1,4 @@
-export interface CellInterface{
+export interface cellInterface{
     id?:string;
     nombre?:string;
     empresaFabricante?:string;
