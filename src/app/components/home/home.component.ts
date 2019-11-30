@@ -16,8 +16,8 @@ export class HomeComponent implements OnInit {
     this.getListCells();
   }
   getListCells(){
-    //this.dataApi.getAllCells().subscribe((cells: cellInterface) => (this.cells = cells))
-    this.dataApi.getAllCells().subscribe((cells) => (console.log(cells)));
+    this.dataApi.getAllCells().subscribe((cells: cellInterface) => (this.cells = cells));
+    //this.dataApi.getAllCells().subscribe((cells) => (console.log(cells)));
   }
   
 }

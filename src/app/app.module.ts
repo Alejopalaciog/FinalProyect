@@ -11,6 +11,7 @@ import { LoginComponent } from './components/user/login/login.component';
 import { ApiService } from './service/api.service';
 import { UserService } from './service/user.service';
 //no se como ponerle
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';//enrutador
@@ -26,9 +27,10 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     NavBarComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule    
   ],
   providers: [ApiService,UserService],
   bootstrap: [AppComponent]

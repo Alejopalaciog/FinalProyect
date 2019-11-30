@@ -5,6 +5,7 @@ export interface cellInterface{
     pantalla?:string;
     procesador?:string;
     ram?:string;
+    image?:string;
     almacenamiento?:string;
     sistemaOperativo?:string;
     camaraCaracteristicas?:string;

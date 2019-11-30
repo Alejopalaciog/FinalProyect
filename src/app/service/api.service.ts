@@ -8,9 +8,10 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ApiService {
+
+  constructor(private http: HttpClient, private userService : UserService) { }
   cells: Observable<any>;
   cell: Observable<any>;
-  constructor(private http: HttpClient, private userService : UserService) { }
   headers : HttpHeaders = new HttpHeaders({
     "Content-Type" : "application/json",
     Authorization: this.userService.getToken()
@@ -18,7 +19,7 @@ export class ApiService {
 
   public getAllCells(){
     let list: number[] = [1, 2, 3];
-    const url = "http://localhost:3000/api/cellphones";
+    const url = "http://localhost:3000/api/cellphones?filter[where][hide]=0";
     return this.http.get(url);
   }
 
@@ -27,15 +28,22 @@ export class ApiService {
     return this.cell = this.http.get(url);
   }
   
-  saveCellphone(cell){
+  saveCellphone(cell: cellInterface){
     const url='http://localhost:3000/api/cellphones?access_token=${token}';
-    return this.http.post(url,cell,{headers: this.headers})
+    return this.http.post<cellInterface>(url,cell,{headers: this.headers})
     .pipe(map(data=>data));
   }
 
-  updateCellphone(cell){
+  updateCellphone(cell: cellInterface){
     const url='http://localhost:3000/api/cellphones?access_token=${token}';
-    return this.http.put(url,cell,{headers: this.headers})
+    return this.http.put<cellInterface>(url,cell,{headers: this.headers})
     .pipe(map(data=>data));
   }
+
+  /*deleteCellphone(){
+    const url='http://localhost:3000/api/cellphones?access_token=${token}';
+    return this.http.delete<cellInterface>(url,{headers: this.headers})
+    .pipe(map(data=>data));
+  }*/
+
 }

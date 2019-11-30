@@ -1,6 +1,6 @@
 export interface userInterface{
     id?:string;
-    nombre?:string;
-    apellido?:string;
+    name?:string;
     email?:string;
+    password?:string;
 }
