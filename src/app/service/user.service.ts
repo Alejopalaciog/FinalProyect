@@ -29,11 +29,11 @@ export class UserService {
     let user_string = JSON.stringify(user);
     localStorage.setItem('currentUser',user_string);
   }
-  setToken(token):void{
-    localStorage.setItem('accessToken', token);
+  setToken(token): void {
+    localStorage.setItem("accessToken", token);
   }
 
-  getToken(){
+  getToken() {
     return localStorage.getItem("accessToken");
   }
 
@@ -49,7 +49,7 @@ export class UserService {
 
   logoutUser(){
     let accessToken = localStorage.getItem('accessToken')
-    const url = "http://localhost:3000/api/Users/logout?accessToken";
+    const url ='http://localhost:3000/api/Users/logout?access_token=${accessToken}';
     localStorage.removeItem('accessToken');
     localStorage.removeItem('currentUser');
     return this.http.post<userInterface>(url,{headers: this.headers});

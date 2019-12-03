@@ -17,6 +17,10 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';//enrutador
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { CellListComponent } from './components/cell-list/cell-list.component';
+import { ModalDeleteComponent } from './components/modal-delete/modal-delete.component';
+import { DeleteComponent } from './components/delete/delete.component';
+import { SaveComponent } from './components/save/save.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +28,11 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     HomeComponent,    
     JumbotronComponent,
     RegisterComponent,
-    NavBarComponent
+    NavBarComponent,
+    CellListComponent,
+    ModalDeleteComponent,
+    DeleteComponent,
+    SaveComponent
   ],
   imports: [
     FormsModule,

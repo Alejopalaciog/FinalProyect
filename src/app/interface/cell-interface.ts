@@ -1,18 +1,19 @@
 export interface cellInterface{
     id?:string;
-    nombre?:string;
-    empresaFabricante?:string;
-    pantalla?:string;
-    procesador?:string;
+    name?:string;
+    manufacturerCompany?:string;
+    screen?:string;
+    processor?:string;
     ram?:string;
-    image?:string;
-    almacenamiento?:string;
-    sistemaOperativo?:string;
-    camaraCaracteristicas?:string;
-    cantidadCamaras?:string;
-    bateria?:string;
-    peso?:string;
-    precio?:string;
+    storage?:string;
+    os?:string;
+    cameraCharacteristics?:string;
+    quantityCamera?:string;
+    battery?:string;
+    weight?:string;
+    price?:string;
     color?:string;
-    sonido?:string;
+    sound?:string;
+    image?:string;
+    hide?:string;
 }
