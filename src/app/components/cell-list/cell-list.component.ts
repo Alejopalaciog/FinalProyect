@@ -1,7 +1,6 @@
 import { ApiService } from './../../service/api.service';
 import { cellInterface } from './../../interface/cell-interface';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
 
 @Component({
@@ -11,10 +10,8 @@ import { Location } from '@angular/common';
 })
 export class CellListComponent implements OnInit {
 
-  constructor(private apiService: ApiService,private location: Location) {
-    
-   }
-  
+  constructor(private apiService: ApiService,private location: Location) { }
+
   private cells: cellInterface;
   ngOnInit() {
     this.getListCellphones();
@@ -25,11 +22,14 @@ export class CellListComponent implements OnInit {
     .subscribe((cells: cellInterface)=>(this.cells = cells));
   }
 
-  /*onDelete(cellForm: NgForm){
-    this.apiService.updateCellphone(cellForm.value).subscribe(cell=> location.reload());
-  }*/
-  onDelete(id: string):void{
-    this.apiService.deleteCellphone(id)
-    .subscribe();
+  onDelete(cell: cellInterface){
+    cell.hide="1";
+    this.apiService.deleteCellphone(cell)
+      .subscribe(cell => location.reload());
+    console.log(cell);
+  }
+
+  onPreUpdate(cell: cellInterface):void{
+    this.apiService.cellPublic = Object.assign({},cell);
   }
 }

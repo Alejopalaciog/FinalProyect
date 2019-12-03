@@ -1,7 +1,5 @@
-
+import { AuthenticateGuard } from './guards/authenticate.guard';
 import { SaveComponent } from './components/save/save.component';
-import { DeleteComponent } from './components/delete/delete.component';
-import { ModalDeleteComponent } from './components/modal-delete/modal-delete.component';
 import { CellListComponent } from './components/cell-list/cell-list.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { HomeComponent } from './components/home/home.component';
@@ -14,10 +12,8 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'cell-list', component: CellListComponent },
-  {path: 'modal-delete', component: ModalDeleteComponent},
-  {path: 'delete', component: DeleteComponent},
-  {path: 'save', component: SaveComponent},
+  {path: 'cell-list', component: CellListComponent , canActivate:[AuthenticateGuard] },
+  {path: 'save', component: SaveComponent,canActivate:[AuthenticateGuard]},
 ];
 
 @NgModule({

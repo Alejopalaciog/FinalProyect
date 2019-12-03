@@ -1,7 +1,7 @@
-import { ApiService } from './../../service/api.service';
-import { Location } from '@angular/common';
-import { NgForm } from '@angular/forms';
 import { cellInterface } from './../../interface/cell-interface';
+import { Router } from '@angular/router';
+import { ApiService } from './../../service/api.service';
+import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,17 +11,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaveComponent implements OnInit {
 
-  constructor(private apiService: ApiService, private location:Location) { }
-  
+  constructor(private apiService: ApiService, private router: Router) { }
+  private cell: cellInterface={
+    id: null,
+    name:"",
+    manufacturerCompany:"",
+    screen:"",
+    processor:"",
+    ram:"",
+    storage:"",
+    os:"",
+    cameraCharacteristics:"",
+    quantityCamera:"",
+    battery:"",
+    weight:"",
+    price:"",
+    color:"",
+    sound:"",
+    image:"",
+    hide:"1"
+  }
   ngOnInit() {
   }
   onSave(cellForm: NgForm):void{
+    
     if(cellForm.value.cellId == null){
-      this.apiService.saveCellphone(cellForm.value)
+      this.apiService.newCellphone(cellForm.value)
+      .subscribe(cell => location.reload());
+    }else{
+      this.apiService.updateCellphone(cellForm.value)
       .subscribe(cell => location.reload());
       console.log(cellForm.value);
-    }else{
-      console.log("Update");
     }
   }
 

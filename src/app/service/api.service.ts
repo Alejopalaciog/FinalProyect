@@ -28,7 +28,7 @@ export class ApiService {
     color:"",
     sound:"",
     image:"",
-    hide:""
+    hide:"0"
   }
   cells: Observable<any>;
   cell: Observable<any>;
@@ -47,29 +47,25 @@ export class ApiService {
     return this.cell = this.http.get(url);
   }
   
-  saveCellphone(cell: cellInterface){
+  newCellphone(cell: cellInterface){
     const token = this.userService.getToken();
     const url=`http://localhost:3000/api/cellphones`;
     return this.http.post<cellInterface>(url,cell,{headers: this.headers})
     .pipe(map(data=>data));
   }
 
-  updateCellphone(cell: cellInterface){
+  updateCellphone(cell){
     const token = this.userService.getToken();
-    const cellId = cell.id;
-    const url=`http://localhost:3000/api/cellphones//${cellId}/?access_token=${token}`;
-    //cell.hide="1";
+    const url=`http://localhost:3000/api/cellphones//${cell.cellId}/?access_token=${token}`;
     return this.http.put<cellInterface>(url,cell,{headers: this.headers})
     .pipe(map(data=>data));
   }
 
-  deleteCellphone(id: string){
+  deleteCellphone(cell){
     const token = this.userService.getToken();
-    console.log(token);
-    const url_api = `http://localhost:3000/api/cellphones/${id}/?access_token=${token}`;
-    return this.http
-      .delete<cellInterface>(url_api, { headers: this.headers })
-      .pipe(map(data => data));
+    const url=`http://localhost:3000/api/cellphones//${cell.id}/?access_token=${token}`;
+    return this.http.put<cellInterface>(url,cell,{headers: this.headers})
+    .pipe(map(data=>data));
   }
 
 }

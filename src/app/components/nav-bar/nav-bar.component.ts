@@ -10,11 +10,19 @@ import { Component, OnInit } from '@angular/core';
 export class NavBarComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router) { }
-
+  public logged: boolean;
   ngOnInit() {
+    this.checkLogin();
   }
   
   onLogout(): void{
     this.userService.logoutUser();
+  }
+  checkLogin():void{
+    if(this.userService.getCurrentUser()==null){
+      this.logged=false;
+    }else{
+      this.logged=true;
+    }
   }
 }

@@ -5,16 +5,16 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item active" *ngIf="logged">
                 <a class="nav-link btn btn-default" routerLink="/cell-list">Listado de celulares</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item active" *ngIf="!logged">
                 <a class="nav-link btn btn-default" routerLink="/login">Iniciar sesion </a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item active" *ngIf="!logged">
                 <a class="nav-link btn btn-default" routerLink="/register">Registrar</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item active" *ngIf="logged">
                 <a class="nav-link btn btn-default" (click)="onLogout()" href="#">Cerrar sesion</a>
             </li>
         </ul>

@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col">
-        <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSave">Nuevo celular</a>
+        <!--a type="button" href="/save" class="btn btn-primary">Nuevo celular</a-->
 
 
         <table class="table">
@@ -18,8 +18,8 @@
                     <td>{{cell.name}}</td>
                     <td>{{cell.manufacturerCompany}}</td>
                     <td>{{cell.price}}$</td>
-                    <a type="button" href="/update" class="btn btn-primary">Actualizar</a>
-                    <a type="button" href="/cell-list" class="btn btn-danger" (click)="onDelete(cell.id)">Eliminar</a>
+                    <a type="button" class="btn btn-primary" (click)="onPreUpdate(cell)">Actualizar</a>
+                    <a type="button" class="btn btn-danger" (click)="onDelete(cell)">Eliminar</a>
                 </tr>
             </tbody>
         </table>
